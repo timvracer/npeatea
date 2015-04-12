@@ -1,0 +1,14 @@
+{
+	"_comment_projects_rootdir" : "specify a root level directory that contains node projects below it.  path relative to server. Will traverse each sub directory until it finds FIRST package.json",
+	"projects_rootdir" : "../", 
+
+	"_comment_projects" : "specify any specific individual project directories you would like to be selectable in the app, path relative to the npmlpb server",
+	"projects" : [				 
+				   {"name" : "npm", "path": "./node_modules/express/"},
+				   {"name" : "columnify", "path": "node_modules/npmapi/node_modules/npm/"},
+				   {"name" : "site-question", "path": "../archie/site-question/"},
+				   {"name" : "sitemap-builder", "path": "../archie/sitemap/sitemap-builder/"},
+				   {"name" : "platform", "path": "../archie/platform/"}
+				 ]
+	
+}

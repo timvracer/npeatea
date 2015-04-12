@@ -1,0 +1,90 @@
+
+body{
+    background: #ddd;
+    color: #585858;
+	height: 100%;
+	margin: 0; 
+	padding: 0;
+	font-family:Helvetica Neue, Helvetica,Arial,sans-serif;  
+}
+html {
+	padding: 0px;
+	margin: 0px;
+}
+a{
+    color: #F22F37;
+}
+
+a#barometer_tab {
+	top: 45%;
+}
+
+body{
+	background-image: url('../images/pricetag.png');
+	background-position: center 50px;
+	background-repeat: no-repeat;
+	height: 100%;
+    text-align: center;
+    font-size: 24px;
+	height: 100%;
+}
+
+#footer {
+	margin-right: 30px;
+}
+
+#footer a{
+    color: #000 !important;
+}
+#glidelogo1 {
+    position: relative;
+	width: 500px	;
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+	z-index:3;
+}
+
+#inner {
+	margin-top: 154px;
+}
+#lovebtn {
+	padding-left: 620px;
+	margin-right: auto;
+	margin-left: auto;
+	width: 60px;
+	display: block;
+}
+
+#tag {
+    font-family: 'Ubuntu Condensed', sans-serif;
+	color: #777;
+	font-size: 21px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+    padding: 0px 10px;
+}
+
+#tag {
+	font-size: 33px;
+	font-weight: bold;
+}
+#comingsoon {
+	font-size: 20px;
+    padding: 0px 35px;
+}
+#emailtext{
+	font-size: 15px;
+}
+
+#privacytos {
+	padding-top: 167px;
+    position: relative;
+    clear: both;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    margin: 75px auto;
+    width: 888px;
+    font-size: 14px;
+}
+

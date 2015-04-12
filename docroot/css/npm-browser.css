@@ -1,0 +1,308 @@
+body{
+    background: #ddd;
+    color: #585858;
+	height: 100%;
+	margin: 0; 
+	padding: 0;
+	font-family:'Roboto Condensed', Helvetica Neue, Helvetica,Arial,sans-serif;  
+}
+
+#logo {
+	background-image: url('../images/nptlogo.png');
+	background-position: 14px;
+	background-repeat: no-repeat;
+	background-size: 12%;
+	height: 82px;
+	box-shadow: 0px 0px 3px #888;
+}
+
+#title {
+	text-align:	right;
+	margin: 0 24px 0 0;
+	font-size: 30px;
+	line-height: 82px;
+	text-shadow: 1px 1px #fff;
+	font-family: fantasy;
+
+}
+
+#stats-container {
+	display: inline-block;
+	margin: 0;
+	margin-left: 8px;
+	text-align: center;
+	cursor: pointer;
+}
+#license-button {
+	background: #00A;
+	color: white;
+	padding: 4px;
+	border-radius: 3px;
+	margin-left: 50px;
+	font-size: 13px;
+}
+#license-button:hover {
+	background: #55F;
+}
+#license-button:active {
+	background: #00A;
+	padding: 3px;
+	box-shadow: 1px 1px 0px #fff;
+}
+
+#license-report-container {
+	display: none;
+}
+
+#license-report-label {
+	margin-left: 22px;
+	margin-bottom: -5px;
+}
+
+#footer_container {
+	margin-bottom: 60px;
+}
+
+#footer {
+	margin-right: 30px;
+}
+
+#footer a{
+    color: #000 !important;
+}
+
+#fakebtn {
+	visibility: hidden;
+	height: 0px;
+	position: absolute;
+}
+#proj-sel-container {
+	margin: 5px 0 5px 5px;
+	font-style:italic;
+	display: inline-block;
+}
+#proj-sel-list {
+	width: 243px;
+}
+
+@-webkit-keyframes pulse {
+	0% {
+		-webkit-box-shadow: 0px 0px 0px gold;
+		opacity: .5;
+	}
+	20% {
+		-webkit-box-shadow: 0px 0px 30px 10px gold;
+	}
+	30% {
+		-webkit-box-shadow: 0px 0px 5px 1px gold;
+		opacity: 1;
+	}
+	80% {
+		-webkit-box-shadow: 0px 0px 50px  10px gold;
+	}
+	100% {
+		-webkit-box-shadow: 0px 0px 0px 1px gold;
+		opacity: .5;
+	}
+}
+@-webkit-keyframes flash {
+	0% {
+		-webkit-box-shadow: 0px 0px 0px gold;
+	}
+	100% {
+		-webkit-box-shadow: 0px 0px 20px  gold;
+	}
+}
+ 
+
+/* apply ‘pulse’ keyframes animation to element on hover: */
+.pulse-anim {
+	-webkit-animation-name: pulse;  /* our animation, above */
+	-webkit-animation-iteration-count: infinite;  /* keep running*/
+	-webkit-animation-timing-function: linear;  /* no easing */
+	-webkit-animation-duration: 1s;  /* takes 1 second */
+}
+/* apply ‘pulse’ keyframes animation to element on hover: */
+.flash-anim {
+	-webkit-animation-name: flash;  /* our animation, above */
+	-webkit-animation-timing-function: linear;  /* no easing */
+	-webkit-animation-duration: 1s;  /* takes 1 second */
+	-webkit-animation-fill-mode: forwards;
+}
+
+#fbrowser-btn {
+	float: left;
+	background-image: url('../images/folder.png');
+	background-size: 30px 30px;
+	background-position: center;
+	height: 32px;
+	width: 32px;
+	margin-left: 10px;
+}
+/*
+#fbrowser-btn:hover {
+	opacity: 0.5;
+}
+#fbrowser-btn:active {
+	opacity: 0.7;
+}
+*/
+#jstree {
+	padding:	5px;
+	margin-top: 0px;
+	margin-left: 10px;
+	margin-right: 10px;
+	border-width: 2px;
+	border-color: black;
+	border-style: solid;
+    background: #aafed6;
+    overflow-x: scroll;
+}
+#license-tree {
+	padding:	5px;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	border-width: 2px;
+	border-color: black;
+	border-style: solid;
+    background: #ccddee;
+    overflow-x: scroll;
+}
+#pkg_contents {
+	margin-right: 20px;
+	margin-bottom: 10px;
+	overflow-y: scroll;
+	padding: 5px;
+}
+#pcontent {
+
+}
+#pjson-content {
+	display: none;
+}
+
+#content-holder {
+	padding: 10px;
+	background: #e8f6fe;
+	box-shadow: 2px 2px 4px 0px #555;
+	border: solid;
+	border-width: 1px;
+	border-top-width: 0px;
+}
+#tab-holder {
+	height: 33px;
+	border-bottom: solid;
+	border-color: black;
+	border-width: 1px;
+	padding-left: 25px;
+}
+
+.tab {
+	height: 32px;
+	width: 120px;
+	display: inline-block;
+	background: #aaa;
+	line-height: 31px;
+	text-align: center;
+	color: black;
+	text-shadow: 1px 1px #ccc;
+	cursor: pointer;
+}
+.tab:hover{
+	background: #bbb;
+}
+
+.tab-selected {
+	background: #e8f6fe;
+	height: 33px;
+	border-left: solid;
+	border-right: solid;
+	border-top: solid;
+	border-width: 1px;
+}
+.tab-selected:hover {
+	background: #e8f6fe;
+}
+#about_content {
+	height: 300px;
+	line-height: 300px;
+	font-size: 40px;
+	text-align: center;
+}
+.mod-installed {
+	display: inline;
+}
+.mod-dev-installed {
+	display: inline;
+	color: purple;
+}
+.mod-not-installed {
+	color: #aa3333;
+	font-style: italic;
+	display: inline;
+}
+.mod-dev-not-installed {
+	color: #3333aa;
+	font-style: italic;
+	display: inline;
+}
+.mod-orphaned {
+	color: #5555ee;
+	display: inline;
+}
+
+#legend {
+	padding-left: 10px;
+}
+#legend p {
+	margin-left: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	background-image: url('../images/expand_icon.png');
+	background-position-x: 72px;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+#legend-reveal {
+	margin-right: 5px;
+	margin-bottom: 5px;
+	display: none;
+	background: white;
+	padding: 5px;
+}
+#legend-reveal p {
+	background-image: none;
+}
+#legend p:hover {
+	opacity: 0.7;
+}
+#legend p:active {
+	opacity: 0.5;
+}
+
+.vnum {
+	display: inline;
+	color: darkblue;
+	font-style: italic;
+}
+.sep {
+	width: 100%;
+	height: 1px;
+	background-color: black;
+}
+.container {
+   height: auto;
+   overflow: hidden;
+}
+.right {
+    float: none; /* not needed, just for clarification */
+    /* the next props are meant to keep this block independent from the other floated one */
+    width: auto;
+    overflow: hidden;
+}
+
+.left {
+	width: 300px;
+    float: left;
+}
