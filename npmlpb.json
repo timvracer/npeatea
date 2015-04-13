@@ -6,9 +6,6 @@
 	"projects" : [				 
 				   {"name" : "npm", "path": "./node_modules/express/"},
 				   {"name" : "columnify", "path": "node_modules/npmapi/node_modules/npm/"},
-				   {"name" : "site-question", "path": "../archie/site-question/"},
-				   {"name" : "sitemap-builder", "path": "../archie/sitemap/sitemap-builder/"},
-				   {"name" : "platform", "path": "../archie/platform/"}
 				 ]
 	
 }
