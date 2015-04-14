@@ -9,17 +9,17 @@
 // connection to the client JS.
 //
 var express = require('express');
-var npmlpb = require('./req-handler.js');
+var npeatea = require('./req-handler.js');
 
 var app = express();
 
-npmlpb.setSocketPort(1338);
-npmlpb.setFSPollingRate(10);  // in seconds
+npeatea.setSocketPort(1338);
+npeatea.setFSPollingRate(10);  // in seconds
 
 app.get ('/npmapi/*', function(req,res) {
 	// process requests intended for npmapi
-	return npmlpb.processRequest(req,res);
+	return npeatea.processRequest(req,res);
 });
 
 app.listen(1337);
-console.log('Server running at http://<host>:1337/ : npmlpb socket on port <host>:1338');
+console.log('Server running at http://<host>:1337/ : nPeaTea socket on port <host>:1338');

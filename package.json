@@ -1,5 +1,5 @@
 {
-  "name": "local-package-browser",
+  "name": "nPeaTea",
   "version": "1.7.6",
   "description": "Tool for browsing your NPM dependencies in a tree structure and inspecting registry information about them",
   "main": "req-handler.js",
@@ -22,14 +22,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@gitrepo.jeeves.ask.info:archie/modules/local-package-browser.git"
+    "url": "git@github.com:timvracer/npeatea.git"
   },
   "keywords": [
     "npm",
     "browser"
   ],
   "author": {
-    "name": "Tim Villanueva"
+    "name": "Tim Villanueva, Ask.com"
   },
   "license": "MIT",
   "readmeFilename": "README.md"

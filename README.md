@@ -1,5 +1,7 @@
-NPMLPB - Node.js Local Package Browser
+nPeaTea - Node.js Local Package Traverser
 =========================
+
+<a target="_blank" href="https://github.com/timvracer/npeatea"><img src="http://i62.tinypic.com/j9x6wg.jpg" border="0", height="100"></a>
 
 [NPMAPI]: https://www.npmjs.org/package/npmapi
 
@@ -9,20 +11,20 @@ npmlpb.json as supported by [NPMAPI].
 **[NPMAPI]** is configured via an npmlpb.json file in ther server root directory which defines your projects root
 directory as well as specific project directories you are interested in browsing via the API.  
 
-NPM Local Package Browser (LPB) runs as a node.js webserver serving pages and assets, responding to API requests, and providing a socket.io interface to provide
+NPM Local Package Traverser (NPT) runs as a node.js webserver serving pages and assets, responding to API requests, and providing a socket.io interface to provide
 for real-time updates when something relevant changes in the projects being observed.  
 
-You can integrate the LPB into your own projects using the exported API **processRequest**.  You can also enable real time updates
+You can integrate the NPT into your own projects using the exported API **processRequest**.  You can also enable real time updates
 to reflect changes by providing a socket port using **setSocketPort**.
 
-<a target="_blank" href="http://imageshack.com/f/p4hPRXaMp"><img src="http://imagizer.imageshack.us/v2/600x480q90/904/hPRXaM.png" border="0", height="500"></a>
+<a target="_blank" href="https://github.com/timvracer/npeatea"><img src="http://i57.tinypic.com/2wf36gn.jpg" border="0", height="500"></a>
 
 ## Installation 
 
 If you are going to run the application directly, simply install the module as a top-level project.  If you want to integrate this into your own application (i.e. admin application for your project), then install as a dependency module in your project directory.  
 
 ```
-npm install local-package-browser
+npm install nPeaTea
 ```
 
 ###npmlpb.json configuration file
@@ -66,23 +68,23 @@ Use the tabs at the top of the content pane to switch between viewing the README
 
 ### Integrating into your own application
 
-You can integrate NPMLPB into your own application powered by node.js by leveraging the API exposed in req-handler.js.  The basic idea is to route any /npmapi requests to the provided request handler.  You can inspect the index.js file to see a basic example:
+You can integrate NPT into your own application powered by node.js by leveraging the API exposed in req-handler.js.  The basic idea is to route any /npmapi requests to the provided request handler.  You can inspect the index.js file to see a basic example:
 ```
 var express = require('express');
-var npmlpb = require('./req-handler.js');
+var npt = require('./req-handler.js');
 
 var app = express();
 
-npmlpb.setSocketPort(1338);
-npmlpb.setFSPollingRate(10);  // in seconds
+npt.setSocketPort(1338);
+npt.setFSPollingRate(10);  // in seconds
 
 app.get ('/npmapi/*', function(req,res) {
   // process requests intended for npmapi
-  return npmlpb.processRequest(req,res);
+  return npt.processRequest(req,res);
 });
 
 app.listen(1337);
-console.log('Server running at http://<host>:1337/ : npmlpb socket on port <host>:1338');
+console.log('Server running at http://<host>:1337/ : nPeaTea socket on port <host>:1338');
 
 ```
 In your own application, you need would set up the socket using ```setSocketPort```, and set the polling rate (how often the server will inspect the file structure for changes) in seconds using ```setFSPollingRate```

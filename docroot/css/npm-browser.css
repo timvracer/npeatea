@@ -8,7 +8,7 @@ body{
 }
 
 #logo {
-	background-image: url('../images/nptlogo.png');
+	background-image: url('../images/logo.png');
 	background-position: 14px;
 	background-repeat: no-repeat;
 	background-size: 12%;
@@ -17,12 +17,11 @@ body{
 }
 
 #title {
-	text-align:	right;
-	margin: 0 24px 0 0;
+	margin: 0 0px 0 189px;
 	font-size: 30px;
 	line-height: 82px;
 	text-shadow: 1px 1px #fff;
-	font-family: fantasy;
+	font-family: Helvetica Neue, Helvetica, sans-serif;
 
 }
 

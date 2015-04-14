@@ -5,7 +5,7 @@
 	"_comment_projects" : "specify any specific individual project directories you would like to be selectable in the app, path relative to the npmlpb server",
 	"projects" : [				 
 				   {"name" : "npm", "path": "./node_modules/express/"},
-				   {"name" : "columnify", "path": "node_modules/npmapi/node_modules/npm/"},
+				   {"name" : "columnify", "path": "node_modules/npmapi/node_modules/npm/"}
 				 ]
 	
 }
