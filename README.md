@@ -1,7 +1,7 @@
 nPeaTea - Node.js Local Package Traverser
 =========================
 
-[<img src="http://i62.tinypic.com/j9x6wg.jpg" border="0", height="100">](https://github.com/timvracer/npeatea)
+[![](http://i57.tinypic.com/15q5aap.jpg)](https://github.com/timvracer/npeatea)
 
 [NPMAPI]: https://www.npmjs.org/package/npmapi
 
@@ -17,14 +17,15 @@ for real-time updates when something relevant changes in the projects being obse
 You can integrate the NPT into your own projects using the exported API **processRequest**.  You can also enable real time updates
 to reflect changes by providing a socket port using **setSocketPort**.
 
-[<img src="http://i57.tinypic.com/2wf36gn.jpg" border="0", height="500">](https://github.com/timvracer/npeatea)
+
+[![](http://i58.tinypic.com/65pnhf.jpg)](https://github.com/timvracer/npeatea)
 
 ## Installation 
 
 If you are going to run the application directly, simply install the module as a top-level project.  If you want to integrate this into your own application (i.e. admin application for your project), then install as a dependency module in your project directory.  
 
 ```
-npm install nPeaTea
+npm install npeatea
 ```
 
 ### npmlpb.json configuration file
