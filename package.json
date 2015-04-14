@@ -1,5 +1,5 @@
 {
-  "name": "nPeaTea",
+  "name": "npeatea",
   "version": "1.7.8",
   "description": "Tool for browsing your NPM dependencies in a tree structure and inspecting registry information about them",
   "main": "req-handler.js",
