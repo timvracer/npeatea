@@ -1,6 +1,6 @@
 {
   "name": "npeatea",
-  "version": "1.7.9",
+  "version": "1.8.0",
   "description": "Tool for browsing your NPM dependencies in a tree structure and inspecting registry information about them",
   "main": "req-handler.js",
   "dependencies": {
