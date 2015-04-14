@@ -7,9 +7,20 @@
 var CURR_PID = 0;
 var CURR_PJSON = {};
 var LICENSE_TREE = {};
+var VERBOSE = false;
 
 // helper function
 function exists(a) {return (a!=undefined && a!=null)}
+
+
+//---------------------------------------------------------------------------------
+// logging function, use your own logger if desired
+//
+function logger(msg) {
+	if (VERBOSE) {
+		console.log (msg);
+	}
+}
 
 //---------------------------------------------------------------------------------
 // startup
@@ -34,7 +45,7 @@ function startup() {
 			if (exists(obj.resp.port)) {
 				configureSocketListener(obj.resp.port);
 			} else {
-				console.log ("No socket provided, dynamic updates disabled");
+				logger ("No socket provided, dynamic updates disabled");
 			}			
 			return;
 		}	
@@ -84,16 +95,16 @@ function configureSocketListener (port) {
 
 	// establish socket connection on port provided
 	var socket = io(":" + port);
-	console.log ("Socket listening on port " + port);
+	logger ("Socket listening on port " + port);
 
 	// set up listener for event "new-plist"
 	socket.on('new-plist', function(obj) {
 		var sel;
 		var jobj;
 
-		console.log ("NEW PLIST EMITTED");
+		logger ("NEW PLIST EMITTED");
 		jobj = JSON.parse(obj);
-		console.log(jobj);
+		logger(jobj);
 
 		// update the selector list in the UI
 		sel = $('#proj-sel-list').val();
@@ -130,7 +141,7 @@ function initializeProjectsList() {
 
 		success:function(obj) {
 			updateSelList(obj);
-			console.log(obj);
+			logger(obj);
 			// Select the item in hash if present
 			if (hash) {
 				$('#proj-sel-list').val(hash);
@@ -163,7 +174,7 @@ function updateSelList(obj) {
 	});
 	// Initialize the click action for the file browse button
 	$('#proj-sel-list').click(function() {
-		console.log ("CLICKED");
+		logger ("CLICKED");
 		$("#proj-sel-list").removeClass("pulse-anim");
 		$("#proj-sel-list").removeClass("flash-anim");
 		$("#fbrowser-btn").removeClass("pulse-anim");
@@ -246,8 +257,8 @@ function initializeTree(pid) {
 	    	var statsObj;
 
 			statsObj = getStatsFromObj (obj);
-			console.log ("totMods = " + statsObj.totMods + " -- Depth = " + statsObj.depth);
-			console.log(statsObj);
+			logger ("totMods = " + statsObj.totMods + " -- Depth = " + statsObj.depth);
+			logger(statsObj);
 
 			// HANDLEBARS templating
 			var source   = $("#statsLine").html();
@@ -260,7 +271,7 @@ function initializeTree(pid) {
 			$("#license-button").click(function(e) {
 
 				$("#license-report-container").toggle();
-				console.log ("license report click");
+				logger ("license report click");
 				$("#jstree").jstree(true).close_all();
 				$("#license-report-label").removeClass("pulse-anim");
 				$("#license-report-label").addClass("pulse-anim");
@@ -364,8 +375,8 @@ function loadData(pid, obj) {
 		jstobj, licTreeObj;
 	var dataObj = [];
 
-	console.log ("loadData :");
-	console.log (obj);
+	logger ("loadData :");
+	logger (obj);
 
 	LICENSE_TREE = {};
 	rootObj = obj.dependencies;
@@ -378,8 +389,8 @@ function loadData(pid, obj) {
 
 	loadDataObj (pid, dataObj, rootObj, ident);
 
-	console.log (dataObj);
-	console.log (LICENSE_TREE);
+	logger (dataObj);
+	logger (LICENSE_TREE);
 
 	jstobj = { 'core' : {
 				'data' : dataObj
@@ -517,7 +528,7 @@ function npmapiGetData(pid, cb) {
 			// server will decycle, must retrocycle
 			// this is because the dependency tree will contain circular references (object names)
 			obj = JSON.retrocycle(obj.resp);
-			console.log(obj);
+			logger(obj);
 			cb(obj);
 			return;
     	}	
@@ -545,7 +556,7 @@ function processTreeSelect(id) {
 	//parm2 = id[0].slice(2);
 	strAry = id[0].split('|');
 
-	console.log(strAry);
+	logger(strAry);
 	if (!exists(strAry[1])) {
 		displayReadMe(CURR_PJSON);
 		return;
@@ -583,8 +594,8 @@ function processLicenseTreeSelect(id) {
 	var sel=[];
 
 	sel.push($("#jstree").jstree(true).get_selected()); 
-	console.log ("Selected: " + id);
-	console.log ("previous: " + sel);
+	logger ("Selected: " + id);
+	logger ("previous: " + sel);
 	$("#jstree").jstree(true).deselect_node(sel);  // this is causing an error with jstree
 	$("#jstree").jstree(true).select_node(id);
 }

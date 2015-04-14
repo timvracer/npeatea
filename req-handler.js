@@ -11,15 +11,30 @@ var io = require('socket.io');
 var _ = require('underscore');
 
 
+npmapi.setLogger (function(msg){logger(msg)});
+
 // We use dirname so that docroot works from wherever the module in installed in the module tree
 var SERVE = serveStatic( __dirname + '/docroot', {'index': ['index.html', 'index.htm']});
 var SOCKET_PORT = null;
 var TIMER_HANDLE = null;
+var VERBOSE = false;
+
+var argv = require('minimist')(process.argv.slice(2));
+
+if (exists(argv.v)) {VERBOSE = true};
 
 //---------------------------------------------------------------------------------
 // helper function because I miss coffeescript
 function exists(a) {return (a!==undefined && a!==null)}
 
+
+//---------------------------------------------------------------------------------
+// logging function, use your own logger if desired
+function logger(msg) {
+	if (VERBOSE) {
+		console.log ("-> " + msg);
+	}
+}
 
 //---------------------------------------------------------------------------------
 // exported function to allow the caller to set the socket portnumber
@@ -65,8 +80,8 @@ function processRequest(req, res) {
 
 	var apiObj;
 
-	console.log("REQUEST URL: " + req.url);
-	console.log(req.query);
+	logger("REQUEST URL: " + req.url);
+	logger(req.query);
 
 	// look in the routing table for an api match
 	apiObj = _.find(NPMLPB_ENDPOINTS, function(rec){; return ( ("/npmapi/"+rec.key) === req.path)});
@@ -78,7 +93,7 @@ function processRequest(req, res) {
 		//------------ DEFAULT ROUTE is to try and load the requested file -------------
 		// attempt to serve the request as a static asset
 		req.url = req.url.replace("/npmapi/", "/");
-		console.log ("LOADING STATIC: " + __dirname + "/docroot" + req.url);
+		logger ("LOADING STATIC: " + __dirname + "/docroot" + req.url);
 		var done = finalhandler(req, res);
 		SERVE(req,res, done);
 		return;
@@ -137,6 +152,8 @@ function api_plist(req, res) {
 //
 function writeAPIResponse(err, jsObj, res, bcycle) {
 	var retObj = {};
+
+	retObj.type = "JSON";
 	if (err) {
 		retObj.status = "error";
 		retObj.error = err;
@@ -148,6 +165,7 @@ function writeAPIResponse(err, jsObj, res, bcycle) {
 		}	
 		retObj.resp = jsObj;
 	}
+	res.writeHead(200, {"Content-Type": "application/json"});
 	res.write(JSON.stringify(retObj));
 	res.end();
 }
