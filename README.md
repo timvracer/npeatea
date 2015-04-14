@@ -1,7 +1,7 @@
 nPeaTea - Node.js Local Package Traverser
 =========================
 
-<a target="_blank" href="https://github.com/timvracer/npeatea"><img src="http://i62.tinypic.com/j9x6wg.jpg" border="0", height="100"></a>
+[<img src="http://i62.tinypic.com/j9x6wg.jpg" border="0", height="100">](https://github.com/timvracer/npeatea)
 
 [NPMAPI]: https://www.npmjs.org/package/npmapi
 
@@ -17,7 +17,7 @@ for real-time updates when something relevant changes in the projects being obse
 You can integrate the NPT into your own projects using the exported API **processRequest**.  You can also enable real time updates
 to reflect changes by providing a socket port using **setSocketPort**.
 
-<a target="_blank" href="https://github.com/timvracer/npeatea"><img src="http://i57.tinypic.com/2wf36gn.jpg" border="0", height="500"></a>
+[<img src="http://i57.tinypic.com/2wf36gn.jpg" border="0", height="500">](https://github.com/timvracer/npeatea)
 
 ## Installation 
 
@@ -27,7 +27,7 @@ If you are going to run the application directly, simply install the module as a
 npm install nPeaTea
 ```
 
-###npmlpb.json configuration file
+### npmlpb.json configuration file
 
 This is the config file used for specifying scannable projects, or your root project directory (will scan all sub-directories)
 A sample file npmlpb.json is included in the install package
@@ -57,7 +57,7 @@ This will start the server and the socket listener.  Next, using a modern browse
 
 If you are testing this locally, then simply use "localhost" for the hostname.  
 
-##Usage
+## Usage
 
 There are 2 primary UI controls to use, the project select list, and the dependency tree.  The project select list in the upper left corner will show you the valid projects that were found based on the npmlpb.json configuration (a valid project with dependencies will have a package.json and a node_modules directory).  Click on the select list, and choose which package you want to view.
 
