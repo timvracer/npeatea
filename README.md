@@ -32,7 +32,7 @@ npm install npeatea
 
 This is the config file used for specifying scannable projects, or your root project directory (will scan all sub-directories)
 A sample file npmlpb.json is included in the install package
-**This file must be placed in the application directory where node is running**
+**This file must be placed in the application directory where npeatea is installed (where index.js is located)**
 ```
 {
   "projects_rootdir" : "../", 
